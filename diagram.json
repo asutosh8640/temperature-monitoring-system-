@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Superhealth Embedded Project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -38.4, "left": -9.6, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -153.6, "left": 173.4, "attrs": {} },
+    { "type": "wokwi-led", "id": "led", "top": 147.6, "left": -121, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 80.8, "left": -134.4, "attrs": { "value": "220" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": 124.8, "left": 163.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:3V3", "dht:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "dht:GND", "black", [ "v0" ] ],
+    [ "esp:D15", "dht:SDA", "green", [ "v0" ] ],
+    [ "esp:D2", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "led:A", "green", [ "v0" ] ],
+    [ "led:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:D4", "bz:1", "red", [ "v0" ] ],
+    [ "bz:2", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "labels": []
+}
